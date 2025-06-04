@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+@font-face {
+  font-family: 'Kapakana';
+  src: url('../fonts/Kapakana[wght].ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+html {
+  height: 100%;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background-color: var(--background-color);
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer * {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--text-color-hover);
+}
+.TopbarLogo {
+  width: 50px;
+  height: 50px;
+  background-image: url('../assets/logo.png');
+  background-size: contain;
+}
+.HomeLogo {
+  width: 200px;
+  height: 200px;
+  background-image: url('../assets/logo.png');
+  background-size: contain;
+}
+.Welcome {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Welcome * {
+  padding: 0px;
+  margin: 0px;
+  color: var(--text-color);
+}
+.Welcome p {
+  font-family: 'Island Moments', cursive;
+  font-size: 80px;
+}
+.Welcome h1 {
+  font-family: 'Kapakana', cursive;
+  font-size: 120px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 695px) {
+  .Welcome p {
+    font-size: 50px;
+  }
+  .Welcome h1 {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 435px) {
+  .Welcome p {
+    font-size: 30px;
+  }
+  .Welcome h1 {
+    font-size: 60px;
+  }
+}
