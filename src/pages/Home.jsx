@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import "../styles/App.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function Home() {
+  const navigate = useNavigate();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function Home() {
         <p>"Lo natural en cada producto"</p>
         <button 
           className="mainButton" 
-          onClick={() => window.location.href = '/Products'}
+          onClick={() => navigate("/Products")}
         >
           Ver Productos
         </button>
