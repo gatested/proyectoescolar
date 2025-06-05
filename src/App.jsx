@@ -11,6 +11,7 @@ import './styles/App.css'
 import Footer from './elements/footer.jsx'
 import Home from './pages/Home.jsx'
 import TopBar from './elements/topbar.jsx'
+import AboutUs from './pages/AboutUs.js';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Products" element={<h1>Productos</h1>} />
+            <Route path="/About-us" element={<AboutUs />} />
           </Routes>
           </main>
           <Footer />

@@ -7,10 +7,10 @@ function TopBar() {
         <div className="TopBar">
             <div className="TopbarLogo"></div>
             <ul className="TopbarDirections">
-                <li><a href={'/'}>Inicio</a></li>
-                <li><a href={'/'}>Productos</a></li>
-                <li><a href={'/'}>FAQ</a></li>
-                <li><a href={'/'}>Sobre nosotros</a></li>
+                <li><Link to="/">Inicio</Link></li>
+                <li><Link to="/Products">Productos</Link></li>
+                <li><Link to="/faq">FAQ</Link></li>
+                <li><Link to="/About-us">Sobre nosotros</Link></li>
             </ul>
         </div>
     )
