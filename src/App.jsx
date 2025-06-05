@@ -4,14 +4,15 @@ import viteLogo from '/vite.svg'
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 
 import './styles/App.css'
 import Footer from './elements/footer.jsx'
 import Home from './pages/Home.jsx'
 import TopBar from './elements/topbar.jsx'
-import AboutUs from './pages/AboutUs.js';
+import AboutUs from './pages/AboutUs.jsx';
 
 function App() {
   return (
@@ -23,6 +24,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Products" element={<h1>Productos</h1>} />
             <Route path="/About-us" element={<AboutUs />} />
+            <Route path="*" element={
+              <div style={{marginTop: "100px", textAlign: "center"}}>
+                <h1>404</h1>
+                <h2>¡Lo sentimos!</h2>
+                <p>La página que buscas no existe</p>
+                <Link to="/">Volver a la página principal</Link>
+              </div>
+              } />
           </Routes>
           </main>
           <Footer />

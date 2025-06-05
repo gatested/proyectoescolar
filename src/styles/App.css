@@ -74,8 +74,14 @@ a:hover {
   font-size: 120px;
   font-weight: 500;
 }
+.AboutUsPage {
+  margin: 100px 30% 0px 30%;
+}
 
 @media screen and (max-width: 695px) {
+  .AboutUsPage {
+    margin: 100px 10% 0px 10%;
+  }
   .Welcome p {
     font-size: 50px;
   }
@@ -84,6 +90,9 @@ a:hover {
   }
 }
 @media screen and (max-width: 435px) {
+  .AboutUsPage {
+    margin: 100px 3% 0px 3%;
+  }
   .Welcome p {
     font-size: 30px;
   }

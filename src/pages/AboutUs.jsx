@@ -2,18 +2,24 @@ import React from "react";
 import "../styles/App.css";
 import { Link } from "react-router-dom";
 
-function WhoWeAre() {
+function AboutUs() {
   return (
-    <div>
-      <h1>Who We Are</h1>
+    <div className="AboutUsPage">
+      <h1>Sobre Nosotros</h1>
+      <h2>¿Quiénes somos?</h2>
       <p>
-        We are a team of passionate developers who are dedicated to creating
-        innovative solutions for our clients. Our team is made up of experienced
-        professionals who are experts in their fields and are always looking to
-        learn new things.
+        Somos una empresa que se dedica a la venta de productos médicos basados en
+        plantas y elementos de origen natural.
       </p>
+      <h2>¿Dónde nos encuentras?</h2>
+      <p>
+        Nuestra empresa es de origen poblano, Aunque por ahora no existen centros físicos dond
+        puedas adquirir nustros productos, por el momento puedes contactarnos por nuestro correo
+
+      </p>
+      <h3>aurilia@aurilia.com</h3>
     </div> 
   )
 }
 
-export default WhoWeAre;
+export default AboutUs;
