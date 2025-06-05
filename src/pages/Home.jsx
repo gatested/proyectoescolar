@@ -31,9 +31,12 @@ function Home() {
         <div className="HomeLogo"></div>
         <h1>Aurilia</h1>
         <p>"Lo natural en cada producto"</p>
-        <Link to="/Products">
-          <button className="mainButton">Ver Productos</button>
-        </Link>
+        <button 
+          className="mainButton" 
+          onClick={() => window.location.href = '/Products'}
+        >
+          Ver Productos
+        </button>
       </div>
       <p>* Video de prueba</p>
     </div>
