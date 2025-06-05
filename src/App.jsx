@@ -13,6 +13,7 @@ import Footer from './elements/footer.jsx'
 import Home from './pages/Home.jsx'
 import TopBar from './elements/topbar.jsx'
 import AboutUs from './pages/AboutUs.jsx';
+import Products from './pages/Products.jsx';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Products" element={<h1>Productos</h1>} />
+            <Route path="/Products" element={<Products />} />
             <Route path="/About-us" element={<AboutUs />} />
             <Route path="*" element={
               <div style={{marginTop: "100px", textAlign: "center"}}>

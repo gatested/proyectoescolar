@@ -28,9 +28,35 @@
     font-size: 20px;
     font-weight: 1000;
 }
+.TopbarMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+  }
 
 @media screen and (max-width: 900px) {
+    .TopbarMenuButton {
+        display: block;
+      }
     .TopbarDirections {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 999;
+        background-color: rgba(0,0,0,0.4);
     }
+    
+    .TopbarDirections.open {
+        display: flex;
+        backdrop-filter: blur(10px);
+        --webkit-backdrop-filter: blur(10px);
+      }
 }
