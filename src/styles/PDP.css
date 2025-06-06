@@ -1,0 +1,37 @@
+.ProductDedicatedPage {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+.ProductDedicatedPage * {
+    margin: 0;
+    padding: 0;
+}
+.ProductDedicatedPage h1 {
+    font-size: 40;
+}
+
+.Cover {
+    width: 250px;
+    height: 250px;
+
+}
+.loaded {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+}
+@media screen and (max-width: 435px) {
+    .ProductDedicatedPage {
+        align-items: center;
+    }
+    .ProductDedicatedPage * {
+        text-align: center;
+    }
+    .Texts {
+        width: 300px !important;
+    }
+ }

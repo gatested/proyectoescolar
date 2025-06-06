@@ -3,5 +3,6 @@
   --text-color: rgba(255, 255, 255, 0.87);
   --text-color-hover: rgb(0, 38, 255);
   --background-color: #000000;
+  --secondary-color: #0c0c0c;
   color: var(--text-color);
 }

@@ -11,7 +11,7 @@ function TopBar() {
 
     return (
         <div className="TopBar">
-            <div className="TopbarLogo"></div>
+            <Link to="/"><div className="TopbarLogo"></div></Link>
 
             <button className="TopbarMenuButton" onClick={toggleMenu}>
                 &#9776; {/* hamburger icon */}
