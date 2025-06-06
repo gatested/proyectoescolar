@@ -5,7 +5,6 @@ import '../styles/PDP.css'
 
 function ProductDedicatedPage() {
     const { id } = useParams();
-    console.log(id);
     const [product, setProduct] = useState({});
     const [IsLoading, setIsLoading] = useState(true);
     const [parsedFeatures, setParsedFeatures] = useState([]);
@@ -27,7 +26,7 @@ function ProductDedicatedPage() {
           console.warn('Error al parsear product.features:', error);
           setParsedFeatures([]); // opcional: reset en caso de error
         }
-      }, [product.features]);
+      }, [product]);
       
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -45,9 +44,13 @@ function ProductDedicatedPage() {
             return response.json();
           })
           .then(data => {
-            setProduct(data[0]);
-            setIsLoading(false);
-            console.log(data[0]);
+            if (data && data.length > 0) {
+                setProduct(data[0]);
+                setIsLoading(false);
+              } else {
+                console.warn("Producto no encontrado o respuesta vacía.");
+                setProduct({}); // o {} si prefieres
+              }
           })
           .catch(error => {
             console.error('Error al obtener productos:', error);
@@ -74,7 +77,7 @@ function ProductDedicatedPage() {
                 {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <h1>{product.name}</h1>}
                 {IsLoading? <Skeleton className='Texts' width="100%" height={220}/> : <p>{product.description}</p>}
                 {parsedFeatures.length > 0 ? (
-                    <div>
+                    <div className='espec'>
                         <h2 style={{marginTop: "20px"}}>Especificaciones</h2>
                         <ul style={{marginLeft: "15px"}}>
                             {parsedFeatures.map((item, index) => (

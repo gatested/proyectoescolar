@@ -47,6 +47,13 @@
     border-radius: 20px;
 }
 @media screen and (max-width: 435px) {
+    .espec {
+        align-self: start !important;
+    }
+    .espec * {
+        align-self: start !important;
+        text-align: left !important;
+    }
     .ProductInfo {
         display: flex;
         flex-direction: column;
