@@ -16,6 +16,7 @@
 .Product * {
     padding: 0px;
     margin: 0px;
+    user-select: none;
 }
 .Product .cover {
     background-color: var(--background-color);

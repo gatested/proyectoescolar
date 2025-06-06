@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
 }
 .ProductDedicatedPage * {
     margin: 0;
@@ -11,11 +13,31 @@
 .ProductDedicatedPage h1 {
     font-size: 40;
 }
-
+.ProductDedicatedPage p {
+    white-space: pre-wrap;
+}
 .Cover {
+    width: 100%;
+    height: 350px;
+    background-color: var(--secondary-color);
+    position: relative;
+    margin-bottom: -200px;
+    z-index: -1;
+    border-radius: 10px;
+}
+.ProductInfo {
+    margin-left: 1%;
+}
+.Coverloaded {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--secondary-color);
+}
+.Image {
     width: 250px;
     height: 250px;
-
+    margin-bottom: 15px;
 }
 .loaded {
     background-size: contain;
@@ -25,6 +47,11 @@
     border-radius: 20px;
 }
 @media screen and (max-width: 435px) {
+    .ProductInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .ProductDedicatedPage {
         align-items: center;
     }

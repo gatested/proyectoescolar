@@ -8,6 +8,30 @@ function ProductDedicatedPage() {
     console.log(id);
     const [product, setProduct] = useState({});
     const [IsLoading, setIsLoading] = useState(true);
+    const [parsedFeatures, setParsedFeatures] = useState([]);
+
+
+    useEffect(() => {
+        if (!product.features) return;
+      
+        try {
+          if (typeof product.features === 'string') {
+            const temp = JSON.parse(product.features);
+            if (Array.isArray(temp)) {
+              setParsedFeatures(temp);
+            }
+          } else if (Array.isArray(product.features)) {
+            setParsedFeatures(product.features);
+          }
+        } catch (error) {
+          console.warn('Error al parsear product.features:', error);
+          setParsedFeatures([]); // opcional: reset en caso de error
+        }
+      }, [product.features]);
+      
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
     useEffect(() => {
         fetch('https://auriliabackend.onrender.com/products/product/' + id)
           .then(response => {
@@ -44,9 +68,26 @@ function ProductDedicatedPage() {
 
     return (
         <div className="ProductDedicatedPage">
-            {IsLoading? <Skeleton className='Cover'/> : <div className='Cover loaded' style={{backgroundImage: "url(" + product.image_url + ")"}}></div>}
-            {IsLoading ? <Skeleton className='Texts' width="60%" height={40}/> : <h1>{product.name}</h1>}
-            {IsLoading? <Skeleton className='Texts' width="70%" height={220}/> : <p>{product.description}</p>}
+            {IsLoading? <Skeleton className='Cover'/> : <div className='Cover Coverloaded' style={{backgroundImage: "url(" + product.cover_url + ")"}}></div>}
+            <div className='ProductInfo'>
+                {IsLoading? <Skeleton className='Image'/> : <div className='Image loaded' style={{backgroundImage: "url(" + product.image_url + ")"}}></div>}
+                {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <h1>{product.name}</h1>}
+                {IsLoading? <Skeleton className='Texts' width="100%" height={220}/> : <p>{product.description}</p>}
+                {parsedFeatures.length > 0 ? (
+                    <div>
+                        <h2 style={{marginTop: "20px"}}>Especificaciones</h2>
+                        <ul style={{marginLeft: "15px"}}>
+                            {parsedFeatures.map((item, index) => (
+                            <li key={index}>
+                                <strong>{item.titulo}</strong>: {item.descripcion}
+                            </li>
+                            ))}
+                        </ul>
+                    </div>
+                    ) : (
+                    !IsLoading && <strong>No hay especificaciones disponibles</strong>
+                    )}
+            </div>
         </div>
     )
 }
