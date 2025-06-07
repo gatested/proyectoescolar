@@ -77,19 +77,26 @@ function ProductDedicatedPage() {
                 {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <h1>{product.name}</h1>}
                 {IsLoading? <Skeleton className='Texts' width="100%" height={220}/> : <p>{product.description}</p>}
                 {parsedFeatures.length > 0 ? (
-                    <div className='espec'>
-                        <h2 style={{marginTop: "20px"}}>Especificaciones</h2>
-                        <ul style={{marginLeft: "15px"}}>
-                            {parsedFeatures.map((item, index) => (
-                            <li key={index}>
+                  <>
+                    {parsedFeatures.map((feature, index) => (
+                      <div key={index}>
+                        <h2 style={{ marginTop: "20px" }}>{feature.title}</h2>
+                        <div className='espec'>
+                          <ul style={{ marginLeft: "15px" }}>
+                            {feature.elements.map((item, idx) => (
+                              <li key={idx}>
                                 <strong>{item.titulo}</strong>: {item.descripcion}
-                            </li>
+                              </li>
                             ))}
-                        </ul>
-                    </div>
-                    ) : (
-                    !IsLoading && <strong>No hay especificaciones disponibles</strong>
-                    )}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  !IsLoading && <strong>No hay especificaciones disponibles</strong>
+                )}
+
             </div>
         </div>
     )
