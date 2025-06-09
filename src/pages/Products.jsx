@@ -30,11 +30,14 @@ function Products() {
         });
     }, []);
     return (
-        <div className="ProductsContainer" style={{marginTop: "100px"}}>
+      <div style={{marginTop: "100px"}}>
+        <h1 style={{width: "100%", textAlign: "center", fontSize: "30px"}}>Nuestros Productos</h1>
+        <div className="ProductsContainer">
         {IsLoading && Array(5).fill(0).map((_, i) => <ProductSkeleton key={i}/>)}
         {productos.map((producto, i) => (
-           <Product ProductElement={producto} key={i}/>
+           <Product ProductElement={producto} styles={{ marginLeft: i > 0 ? '10px' : 0 }} key={i}/>
         ))}
+      </div>
       </div>
     )
 }

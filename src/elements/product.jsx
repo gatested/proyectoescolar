@@ -4,14 +4,15 @@ import "../styles/App.css";
 import "../styles/Product.css";
 import { useNavigate, useParams } from "react-router-dom";
 
-function Product(ProductElement) {
+function Product(props) {
+    const { ProductElement, styles } = props;
     const navigate = useNavigate();
-    const product = ProductElement.ProductElement;
+    
     return (
-        <button className="Product" onClick={() => navigate("/Product/" + product.id)}>
-            <div className="cover" style={{backgroundImage: "url(" + product.image_url + ")"}}></div>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
+        <button className="Product" onClick={() => navigate("/Product/" + ProductElement.id)} style={styles}>
+            <div className="cover" style={{backgroundImage: "url(" + ProductElement.image_url + ")"}}></div>
+            <h3>{ProductElement.name}</h3>
+            <p>{ProductElement.description}</p>
         </button>
     )
 
