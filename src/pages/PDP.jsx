@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import '../styles/PDP.css'
+import { APIURl } from '../services/APIPath';
 
 function ProductDedicatedPage() {
     const { id } = useParams();
@@ -32,7 +33,7 @@ function ProductDedicatedPage() {
         window.scrollTo(0, 0);
     }, [id]);
     useEffect(() => {
-        fetch('https://auriliabackend.onrender.com/products/product/' + id)
+        fetch(APIURl + '/products/product/' + id)
           .then(response => {
       
             // Verifica si la respuesta fue exitosa
@@ -75,6 +76,8 @@ function ProductDedicatedPage() {
             <div className='ProductInfo'>
                 {IsLoading? <Skeleton className='Image'/> : <div className='Image loaded' style={{backgroundImage: "url(" + product.image_url + ")"}}></div>}
                 {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <h1>{product.name}</h1>}
+                {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <p style={{fontWeight: "bold", marginBottom: "10px"}}>Seller: <Link to={'/@' + product.vendor_info.username}>{product.vendor_info.username}</Link></p> }
+                {!IsLoading && <h2>Description</h2>}
                 {IsLoading? <Skeleton className='Texts' width="100%" height={220}/> : <p>{product.description}</p>}
                 {parsedFeatures.length > 0 ? (
                   <>

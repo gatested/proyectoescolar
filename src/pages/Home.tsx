@@ -5,6 +5,7 @@ import Product from "../elements/product";
 import { useNavigate } from "react-router-dom";
 import ProductSkeleton from "../elements/productSkeleton";
 import { motion } from "motion/react";
+import { APIURl } from "../services/APIPath";
 
 type Producto = {
   id: string;
@@ -48,7 +49,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch('https://auriliabackend.onrender.com/products/products/isprincipal')
+    fetch(APIURl+'/products/products/isprincipal')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -99,7 +100,6 @@ function Home() {
         </motion.h1>
         <SloganP />
       </div>
-
       <div className="ProductsContainer">
         {isLoading && <ProductSkeleton />}
         {productos.map((producto, i) => (

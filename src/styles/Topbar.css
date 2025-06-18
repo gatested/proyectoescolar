@@ -1,12 +1,12 @@
 .TopBar {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
-    height: 75px;
+    height: 64px;
     position: fixed;
-    backdrop-filter: blur(10px);
-    --webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px) saturate(180%) brightness(150%) blur(10px);
+    --webkit-backdrop-filter: blur(5px) saturate(180%) brightness(150%) blur(10px);
     z-index: 100;
-    border-bottom: 3px solid rgb(255, 255, 255);
+    /*border-bottom: 3px solid rgb(255, 255, 255);*/
     display: flex;
     justify-content: space-between;
     align-items: center;

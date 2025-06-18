@@ -14,6 +14,9 @@ body {
   height: 100%;
   background-color: var(--background-color);
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 .App {
   -webkit-tap-highlight-color: transparent;
   display: flex;
@@ -82,7 +85,7 @@ a:hover {
 .welcomeVideo {
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: auto;
   overflow: hidden;
   border: none;
   z-index: -1;

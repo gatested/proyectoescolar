@@ -20,6 +20,8 @@ import AboutUs from './pages/AboutUs';
 import Products from './pages/Products';
 import PDP from './pages/PDP';
 import ReactGA from 'react-ga4'
+import ProfilePage from './pages/Profile';
+import CatchAllRoute from './pages/RouterManager';
 ReactGA.initialize('G-KYK7FZDPK7')
 
 function usePageview() {
@@ -47,14 +49,8 @@ function App() {
               <Route path="/Products" element={<Products />} />
               <Route path="/About-us" element={<AboutUs />} />
               <Route path="/Product/:id" element={<PDP />} />
-              <Route path="*" element={
-                <div style={{marginTop: "100px", textAlign: "center"}}>
-                  <h1>404</h1>
-                  <h2>¡Lo sentimos!</h2>
-                  <p>La página que buscas no existe</p>
-                  <Link to="/">Volver a la página principal</Link>
-                </div>
-                } />
+              <Route path="/Profile/:id" element={<ProfilePage />} />
+              <Route path="*" element={ <CatchAllRoute /> }/>
             </Routes>
             </main>
             <Footer />

@@ -18,6 +18,7 @@ function AboutUs() {
 
       </p>
       <h3>aurilia@aurilia.com</h3>
+      <Link to={'/@Aurilia'}>Tienda Oficial</Link>
     </div> 
   )
 }

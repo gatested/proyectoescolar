@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Product from "../elements/product";
 import { useNavigate } from "react-router-dom";
 import ProductSkeleton from "../elements/productSkeleton";
+import { APIURl } from "../services/APIPath";
 
 function Products() {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Products() {
     
   
     useEffect(() => {
-      fetch('https://auriliabackend.onrender.com/products/products')
+      fetch(APIURl + '/products/products')
         .then(response => {
     
           // Verifica si la respuesta fue exitosa
