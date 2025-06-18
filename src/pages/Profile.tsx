@@ -12,6 +12,7 @@ interface ProfilePageProps {
 
 interface User {
   id: number;
+  display_name
   username: string;
   img_cover: string;
   img_photo: string;
@@ -130,7 +131,8 @@ function ProfilePage({ username }: ProfilePageProps) {
                       transition={{ duration: 0.3 }}
                       className="SkeletonTitles"
                     >
-                      <Skeleton className="TitleSkeleton" width="100%" height={40} />
+                      <Skeleton className="TitleSkeleton" width="50%" height={40} />
+                      <Skeleton className="TitleSkeleton" width={100} height={15} />
                       <Skeleton className="TitleSkeleton" width="100%" height="100%" />
                     </motion.div>
                   ) : (
@@ -141,7 +143,8 @@ function ProfilePage({ username }: ProfilePageProps) {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <h1>{user.username}</h1>
+                      <h1>{user.display_name}</h1>
+                      <p style={{color: 'var(--secondary-text-color)'}}>@{user.username}</p>
                       <p>{user.description}</p>
                     </motion.div>
                   )}
@@ -167,13 +170,14 @@ function ProfilePage({ username }: ProfilePageProps) {
                     animate="visible"
                   >
                     <h2>Products</h2>
-                    {products.map((producto, i) => (
+                    <div className="ProductList">{products.map((producto, i) => (
                       <Product
                         ProductElement={producto}
                         styles={{ marginLeft: i > 0 ? '10px' : 0 }}
                         key={i}
                       />
                     ))}
+                    </div>
                   </motion.div>
                 </>
               ) : null}

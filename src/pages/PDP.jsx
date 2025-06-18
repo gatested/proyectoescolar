@@ -76,7 +76,7 @@ function ProductDedicatedPage() {
             <div className='ProductInfo'>
                 {IsLoading? <Skeleton className='Image'/> : <div className='Image loaded' style={{backgroundImage: "url(" + product.image_url + ")"}}></div>}
                 {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <h1>{product.name}</h1>}
-                {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <p style={{fontWeight: "bold", marginBottom: "10px"}}>Seller: <Link to={'/@' + product.vendor_info.username}>{product.vendor_info.username}</Link></p> }
+                {IsLoading ? <Skeleton className='Texts' width="100%" height={40}/> : <p style={{fontWeight: "bold", marginBottom: "10px"}}><Link to={'/@' + product.vendor_info.username}>{product.vendor_info.display_name}</Link></p> }
                 {!IsLoading && <h2>Description</h2>}
                 {IsLoading? <Skeleton className='Texts' width="100%" height={220}/> : <p>{product.description}</p>}
                 {parsedFeatures.length > 0 ? (
