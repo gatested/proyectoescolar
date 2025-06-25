@@ -4,7 +4,6 @@ import Skeleton from 'react-loading-skeleton';
 import '../styles/PDP.css'
 import { APIURl } from '../services/APIPath';
 import { motion, AnimatePresence } from "motion/react";
-import { blur } from 'three/tsl';
 
 function ProductDedicatedPage() {
     const { id } = useParams();
