@@ -66,6 +66,7 @@ function Home() {
   }, []);
 
   return (
+    <>
     <div className="Home">
       {/* <iframe
         className="welcomeVideo"
@@ -124,12 +125,13 @@ function Home() {
         viewport={{ once: true }}
         variants={palabraVariant}
         transition={{duration: 0.8, delay: 0.2}}
-         className="mainButton" onClick={() => navigate("/Products")}>
+         className="mainButton" onClick={() => navigate("/@Aurilia")}>
           Ver Todos Los Productos
         </motion.button>
         }
       </div>
     </div>
+    </>
   );
 }
 

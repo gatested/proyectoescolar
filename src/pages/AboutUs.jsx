@@ -13,7 +13,7 @@ function AboutUs() {
       </p>
       <h2>¿Dónde nos encuentras?</h2>
       <p>
-        Nuestra empresa es de origen poblano, Aunque por ahora no existen centros físicos dond
+        Nuestra empresa es de origen poblano, Aunque por ahora no existen tiendas físicas donde
         puedas adquirir nustros productos, por el momento puedes contactarnos por nuestro correo
 
       </p>

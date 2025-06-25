@@ -11,7 +11,7 @@ function Products() {
     
   
     useEffect(() => {
-      fetch(APIURl + '/products/products')
+      fetch(APIURl + '/users/user/1/products')
         .then(response => {
     
           // Verifica si la respuesta fue exitosa

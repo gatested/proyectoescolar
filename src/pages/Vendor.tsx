@@ -30,7 +30,7 @@ interface Product {
 }
 
 
-function ProfilePage({ username }: ProfilePageProps) {
+function VendorPage({ username }: ProfilePageProps) {
   const params = useParams<{ id?: string }>();
   const [user, setUser] = useState<User | null>(null);
   const [products, setProducts] = useState<Product | null>(null);
@@ -55,8 +55,8 @@ function ProfilePage({ username }: ProfilePageProps) {
 
     // Construir URL
     const url = isId 
-      ? `${APIURl}/users/user/${identifier}`
-      : `${APIURl}/users/user/byusername/${identifier}`;
+      ? `${APIURl}/vendors/${identifier}`
+      : `${APIURl}/vendors/bytagname/${identifier}`;
 
     fetch(url)
       .then(res => res.json())
@@ -70,7 +70,7 @@ function ProfilePage({ username }: ProfilePageProps) {
   useEffect(() => {
     if (!identifier) return;
     if (!user) return;
-    fetch(APIURl + '/users/user/' + user.id + '/products')
+    fetch(APIURl + '/vendors/' + user.id + '/products')
     .then(res => res.json())
     .then(data => {
       setProducts(data);
@@ -81,6 +81,7 @@ function ProfilePage({ username }: ProfilePageProps) {
 
 
   return (
+    <>
     <div className="ProfileContainer">
         <motion.div
           className="ProfileCover"
@@ -108,8 +109,8 @@ function ProfilePage({ username }: ProfilePageProps) {
                 ) : (
                   <motion.div
                     key="user-logo"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20,filter: 'blur(10px)' }}
+                    animate={{ opacity: 1, y: 0,filter: 'blur(0px)' }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
                     className="ProfileLogo PLColor"
@@ -138,8 +139,8 @@ function ProfilePage({ username }: ProfilePageProps) {
                   ) : (
                     <motion.div
                       key="user-info"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                      animate={{ opacity: 1, y: 0,filter: 'blur(0px)'}}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -168,6 +169,8 @@ function ProfilePage({ username }: ProfilePageProps) {
                     }}
                     initial="hidden"
                     animate="visible"
+                    //whileInView="visible"
+                    //viewport={{ once: true, amount: 0.1 }}
                   >
                     <h2>Products</h2>
                     <div className="ProductList">{products.map((producto, i) => (
@@ -185,7 +188,8 @@ function ProfilePage({ username }: ProfilePageProps) {
             </div>
         </div>
     </div>
+    </>
   );
 }
 
-export default ProfilePage;
+export default VendorPage;

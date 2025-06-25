@@ -1,5 +1,5 @@
 import { useLocation, Navigate } from 'react-router-dom'
-import ProfilePage from './Profile'
+import VendorPage from './Vendor';
 import { Link } from 'react-router-dom'
 
 function CatchAllRoute() {
@@ -7,7 +7,7 @@ function CatchAllRoute() {
   
   if (location.pathname.startsWith('/@')) {
     const username = location.pathname.replace('/@', '')
-    return <ProfilePage username={username} />
+    return <VendorPage username={username} />
   }
 
   // Si no es un perfil, muestra 404

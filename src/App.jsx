@@ -20,7 +20,7 @@ import AboutUs from './pages/AboutUs';
 import Products from './pages/Products';
 import PDP from './pages/PDP';
 import ReactGA from 'react-ga4'
-import ProfilePage from './pages/Profile';
+import VendorPage from './pages/Vendor';
 import CatchAllRoute from './pages/RouterManager';
 ReactGA.initialize('G-KYK7FZDPK7')
 
@@ -49,7 +49,7 @@ function App() {
               <Route path="/Products" element={<Products />} />
               <Route path="/About-us" element={<AboutUs />} />
               <Route path="/Product/:id" element={<PDP />} />
-              <Route path="/Profile/:id" element={<ProfilePage />} />
+              <Route path="/Vendor/:id" element={<VendorPage />} />
               <Route path="*" element={ <CatchAllRoute /> }/>
             </Routes>
             </main>

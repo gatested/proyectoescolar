@@ -48,6 +48,25 @@ span:has(.Cover) {
     background-position: center;
     background-color: var(--secondary-color);
 }
+.productMarket {
+    display: flex;
+    flex-direction: column;
+}
+.productMarket > p {
+    margin-right: 10px;
+}
+.productMarket > button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0051ff;
+    width: 150px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.buttonSkeleton {
+    margin-top: 10px;
+}
 @media screen and (max-width: 435px) {
     .espec {
         align-self: start !important;
